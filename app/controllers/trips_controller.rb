@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
   # GET /trips
   def index
-    @trips = Trip.all
+    @trips = Trip.includes(:add_ons)
 
     render json: @trips
   end
@@ -46,6 +46,6 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.require(:trip).permit(:name, :cost, :currency, :cover_image, :country, :start_date, :duration_nights, :group_size, :description)
+      params.require(:trip).permit(:name, :cost, :currency, :cover_image, :country, :start_date, :duration_nights, :group_size, :description, :included)
     end
 end

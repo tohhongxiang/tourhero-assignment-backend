@@ -1,2 +1,7 @@
 class Trip < ApplicationRecord
+    has_many :add_ons
+
+    def as_json(options = {})
+        super(include: { add_ons: {  } })
+    end
 end
