@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cost: 1
+  currency: MyString
+  cover_image: MyString
+  country: MyString
+  start_date: 2024-04-16
+  duration_nights: 1
+  group_size: 1
+  description: MyText
+
+two:
+  name: MyString
+  cost: 1
+  currency: MyString
+  cover_image: MyString
+  country: MyString
+  start_date: 2024-04-16
+  duration_nights: 1
+  group_size: 1
+  description: MyText
