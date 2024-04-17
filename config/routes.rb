@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :add_ons
+
+  resources :add_ons do
+    patch :book, on: :member
+  end
+
   resources :trips
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

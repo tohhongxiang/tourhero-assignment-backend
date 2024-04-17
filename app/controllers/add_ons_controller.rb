@@ -33,6 +33,17 @@ class AddOnsController < ApplicationController
     end
   end
 
+  # PATCH /add_ons/1/book
+  def book
+    @add_on = AddOn.find(params[:id])
+    
+    if @add_on.book
+      render json: @add_on
+    else
+      render json: @add_on.errors, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /add_ons/1
   def destroy
     @add_on.destroy!
