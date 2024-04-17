@@ -62,11 +62,14 @@ end
 
 For add-ons, we also want the `(name, trip_id)` pair to be unique. In a single trip, we should not have add-ons with the same name. We can do this with a `validates` and `uniqueness` (within `app/models/add_on.rb`)
 
+We also want to make sure that `spots_remaining >= 0`
+
 ```rb
 class AddOn < ApplicationRecord
     belongs_to :trip
 
     validates :name, uniqueness: { scope: [:trip_id, :name] } # we want (name, trip_id) to be unique
+    validates :spots_remaining, comparison: { greater_than_or_equal_to: 0 } # make sure that spots_remaining does not go below zero
 end
 ```
 
