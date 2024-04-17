@@ -14,6 +14,7 @@ cd tourhero-assignment-backend
 
 bundle
 rails db:migrate
+rails db:seed
 ```
 
 ## Running Development Server
